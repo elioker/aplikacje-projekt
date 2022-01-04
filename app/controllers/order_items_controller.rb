@@ -4,6 +4,13 @@ before_action :authenticate_user!
 
     def index
       @items = current_cart.order.items
+
+      response = { :items => @items }
+        
+        respond_to do |format|
+            format.html
+            format.json { render json: response}
+        end
     end
   
     def create
