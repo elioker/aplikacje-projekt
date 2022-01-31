@@ -1,5 +1,37 @@
-<h2> Kategorie  (<%= @categories.count %>)</h2>
-<ol>
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8" />
+  <style>
+  
+    .Wyloguj {
+      text-align: right;
+      margin-right: 15px;
+      }
+    body {
+      font-family: Didot;
+      text-align:center;
+      margin: auto;
+      background-color: lightblue;
+        }
+    h2 {
+      font-size: 40px ;
+    }
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      color: #76767a;
+    }
+    </style>
+    <body>
+    
+    <div class="Wyloguj"> <%= link_to "Koszyk ", "/cart/items" %> &nbsp <%= link_to "Wyloguj", "/#" %> </div>
+<h2> Kategorie  </h2>
+<ul style="list-style: none;">
     <% @categories.each do |category|%>
         <li>
             <%= link_to category_products_path(category) do %>
@@ -7,7 +39,7 @@
             (<%= category.products.count %>) 
             <% end %>
         </li>
-        
     <% end%>
         
-</ol>
+</ul>
+</body>

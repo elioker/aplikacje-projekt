@@ -1,6 +1,48 @@
-<h2>Koszyk</h2>
+<!DOCTYPE HTML>
+<head>
+  
+  <meta charset="utf-8" />
+  <style>
+    body {
 
-<table>
+      font-family: Didot;
+      text-align:center;
+      margin: auto;
+      background-color: lightblue;
+        }
+    .center {
+      text-align:center;
+      margin: auto;
+      width: 50%;
+    }
+    .Powrót {
+      text-align: right;
+      margin-right: 15px;
+    }
+    h2 {
+      font-size: 40px ;
+    }
+    h1 {
+      font-size: 60px ;
+     }
+    
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      color: #76767a;
+    } 
+</style>
+</head>
+<body>
+<div class="Powrót"> <%= link_to "Powrót do kategorii  ", "/categories" %> </div>
+<br>
+<h2>Koszyk</h2>
+<table class = "center">
   <thead>
     <tr>
       <td>Produkt</td>
@@ -10,7 +52,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @items.each do |item| %>
+    <% @items.each do |item| %> 
       <tr>
         <td><%= item.product.title %></td>
         <td><%= number_to_currency item.price %></td>
@@ -24,3 +66,14 @@
     <% end %>
   </tbody>
 </table>
+</body>
+
+<tfoot>
+  <tr>
+    <td colspan="4" align="right">
+      <%= number_to_currency current_cart.sub_total %>
+    </td>
+  </tr>
+</tfoot>
+
+<%= link_to 'Płatność', checkout_path%>

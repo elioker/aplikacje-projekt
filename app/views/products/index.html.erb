@@ -1,23 +1,52 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8" />
+  <style>
+  .Powrót{
+    text-align:right;
+    margin-right: 15px;
+    }
+    body {
+      font-family: Didot;
+      text-align:center;
+      margin: auto;
+      background-color: lightblue;
+        }
+    h2 {
+      font-size: 40px ;
+    }
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      color: #76767a;
+    } 
+</style>
+</head>
+<body>
+<div class="Powrót"> <%= link_to "Powrót do kategorii  ", "/categories" %> </div>
 <h2>
   <%= @category.title %> /
   Produkty
 </h2>
 
-<ol>
+<ul style="list-style: none;">
   <% @products.each do |product| %>
+    <ul style="list-style: none;">
     <li>
       <%= product.title %> (<%= number_to_currency product.price %>)
-  <%= form_tag order_items_path do %>
+      <%= form_tag order_items_path do %>
         <%= hidden_field_tag :product_id, product.id %>
         <%= number_field_tag :quantity, 1 %>
         <%= submit_tag "Dodaj do koszyka" %>
       <% end %>
-
-      <ul>
-        <% product.variants.each do |variant| %>
-          <li><%= variant.title %> (<%= number_to_currency variant.price %>)</li>
-        <% end %>
-      </ul>
+    
     </li>
-  <% end %>
-</ol>
+    </ul>
+</ul>
+<%end%>
+</body>

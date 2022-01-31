@@ -1,7 +1,5 @@
 class OrderItemsController < ApplicationController
     
-before_action :authenticate_user!
-
     def index
       @items = current_cart.order.items
 
