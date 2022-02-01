@@ -8,10 +8,6 @@
       "description": "Products"
     },
     {
-      "path": "/categories.{format}",
-      "description": "Categories"
-    },
-    {
       "path": "/order_items.{format}",
       "description": "OrderItem"
     },
