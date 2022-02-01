@@ -1,17 +1,58 @@
+<!DOCTYPE HTML>
+<head>
+
+  <meta charset="utf-8" />
+  <style>
+    body {
+
+      font-family: Didot;
+      text-align:center;
+      margin: auto;
+      background-color: lightblue;
+        }
+    .center {
+      text-align:center;
+      margin: auto;
+      width: 50%;
+    }
+    .Powrót {
+      text-align: right;
+      margin-right: 15px;
+    }
+    h2 {
+      font-size: 40px ;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: black;
+    }
+    a:visited {
+      color: black;
+    }
+    a:hover {
+      color: #76767a;
+    }
+    </style>
+    <body>
+    <div class="Powrót"> <%= link_to "Powrót do koszyka  ", "/cart" %> </div>
 <h2> Płatność </h2>
 
 <%= form_for @order, url: checkout_path do |f| %>
 
     <div class="form-group">
         <%= f.label :first_name %>
+        :
         <%= f.text_field :first_name %>
     </div>
-
+    <br>
     <div class="form-group">
         <%= f.label :last_name %>
+        :
         <%= f.text_field :last_name %>
     </div>
-
+    <br>
     <%= f.submit 'Płatność' %>
 
 <% end%>
+</body>

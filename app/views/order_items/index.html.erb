@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-  
+
   <meta charset="utf-8" />
   <style>
     body {
@@ -25,7 +25,7 @@
     h1 {
       font-size: 60px ;
      }
-    
+
     a:link {
       text-decoration: none;
       color: black;
@@ -35,7 +35,7 @@
     }
     a:hover {
       color: #76767a;
-    } 
+    }
 </style>
 </head>
 <body>
@@ -52,7 +52,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @items.each do |item| %> 
+    <% @items.each do |item| %>
       <tr>
         <td><%= item.product.title %></td>
         <td><%= number_to_currency item.price %></td>
@@ -67,7 +67,11 @@
   </tbody>
 </table>
 </body>
-
+<br>
+<h3>
+<br>
+Do zapłaty:
+</h3>
 <tfoot>
   <tr>
     <td colspan="4" align="right">
@@ -76,4 +80,7 @@
   </tr>
 </tfoot>
 
-<%= link_to 'Płatność', checkout_path%>
+<h4>
+<br>
+<%= link_to 'Przejdź do płatności', checkout_path%>
+</h4>

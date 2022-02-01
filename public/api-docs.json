@@ -4,8 +4,24 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
+      "path": "/products.{format}",
+      "description": "Products"
+    },
+    {
+      "path": "/categories.{format}",
+      "description": "Categories"
+    },
+    {
+      "path": "/order_items.{format}",
+      "description": "OrderItem"
+    },
+    {
       "path": "/sessions.{format}",
       "description": "Authentication"
+    },
+    {
+      "path": "/orders.{format}",
+      "description": "Order"
     }
   ],
   "authorizations": null,

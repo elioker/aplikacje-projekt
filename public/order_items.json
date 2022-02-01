@@ -1,0 +1,67 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "order_items",
+  "apis": [
+    {
+      "path": "/cart.json",
+      "operations": [
+        {
+          "summary": "Returns order item",
+          "notes": "Notes...",
+          "nickname": "OrderItems#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/cart/items.json",
+      "operations": [
+        {
+          "summary": "Returns order item",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "product_id",
+              "type": "int",
+              "description": "product_id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quantity",
+              "type": "int",
+              "description": "quantity",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "OrderItems#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/cart/items/{id}.json",
+      "operations": [
+        {
+          "summary": "Returns order item",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "id",
+              "type": "int",
+              "description": "product_id",
+              "required": true
+            }
+          ],
+          "notes": "Notes...",
+          "nickname": "OrderItems#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

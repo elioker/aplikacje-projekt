@@ -49,7 +49,6 @@ class SessionsController < ApplicationController
                 require_token
                 if current_user
                     current_user.invalidate_token
-                    
                 end
             end
         end

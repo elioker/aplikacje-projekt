@@ -1,0 +1,28 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "products",
+  "apis": [
+    {
+      "path": "/categories/{category_id}/products.json",
+      "operations": [
+        {
+          "summary": "Returns products",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "category_id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "nickname": "Products#index",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
